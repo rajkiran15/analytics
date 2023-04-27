@@ -1,0 +1,10 @@
+body{
+    min-height: 100vh !important;
+    min-width: 100vh !important;
+    overflow-x: hidden;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.react-grid-layout {
+    position: relative !important;
+    width:100vw !important;
+}
