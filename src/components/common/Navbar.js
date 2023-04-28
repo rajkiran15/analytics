@@ -31,7 +31,7 @@ export default function Navbar() {
             }}
             open={isMenuOpen}
             onClose={handleMenuClose}
-            style={{ position: "absolute", top: "58px" }}
+            style={{ position: "fixed", top: "58px" }}
         >
             <MenuItem>Profile</MenuItem>
             <MenuItem>My account</MenuItem>
@@ -40,7 +40,7 @@ export default function Navbar() {
     );
     return (
         <Box>
-            <AppBar position="fixed" style={{ backgroundColor: "#ffff", width: "100vw",zIndex:9999999 }}>
+            <AppBar position="fixed" style={{ backgroundColor: "#ffff", width: "100vw",zIndex:9999999,top:0,left:0 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", width: "calc(100% - 50px)", alignItems: "center" }}>
                     <div>
                         <h2 style={{ color: "black",paddingLeft:"40px" }}>Analytics</h2>

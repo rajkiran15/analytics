@@ -1,5 +1,5 @@
 import React from "react";
-import { CHARTS_TYPE,LEFT_DRAWER_TYPE } from "../../utils/constant";
+import { CHARTS_TYPE, LEFT_DRAWER_TYPE } from "../../utils/constant";
 import RenderCurrentChart from "./RenderCurrentChart";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import Card from '@mui/material/Card';
@@ -56,7 +56,7 @@ const Dashboard = () => {
             }}
             open={isMenuOpen}
             onClose={handleMenuClose}
-            style={{ position: "absolute", top: "35px" }}
+            style={{ position: "fixed", top: "35px", zIndex: 99999999,display:"block" }}
         >
             <MenuItem onClick={() => handleLeftDrawer(LEFT_DRAWER_TYPE.TOGGLE_LEFT_DRAWER)}>Edit Chart</MenuItem>
             <MenuItem>Transform</MenuItem>
@@ -101,8 +101,8 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             <div style={{ display: "flex", alignItems: "center" }}>
-                                <IconButton className="headerColor" onClick={(e) => handleProfileMenuOpen(e)}>
-                                    <MoreHorizIcon />
+                                <IconButton className="headerColor">
+                                    <MoreHorizIcon onClick={(e) => handleProfileMenuOpen(e)}/>
                                 </IconButton>
                                 <IconButton className="headerColor">
                                     <CloseIcon />
@@ -110,10 +110,10 @@ const Dashboard = () => {
                             </div>
                         </Box>
                         {RenderCurrentChart(chart)}
-                        {renderMenu()}
                     </Card>
                 ))}
             </ResponsiveReactGridLayout>
+            {renderMenu()}
             <LeftDrawer
                 handleLeftDrawer={handleLeftDrawer}
                 toggleDrawer={toggleDrawer}
