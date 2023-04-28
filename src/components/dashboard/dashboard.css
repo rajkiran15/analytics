@@ -8,4 +8,5 @@
 #chartCard .headerColor{
     color: #83778F;
     padding: 5px 5px;
+    cursor: pointer !important;
 }

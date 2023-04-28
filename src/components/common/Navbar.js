@@ -41,7 +41,7 @@ export default function Navbar() {
     return (
         <Box>
             <AppBar position="fixed" style={{ backgroundColor: "#ffff", width: "100vw",zIndex:9999999,top:0,left:0 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", width: "calc(100% - 50px)", alignItems: "center" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", height: "calc(100% - 50px)", alignItems: "center" }}>
                     <div>
                         <h2 style={{ color: "black",paddingLeft:"40px" }}>Analytics</h2>
                     </div>
@@ -52,7 +52,7 @@ export default function Navbar() {
                             aria-label="account of current user"
                             aria-haspopup="true"
                             color="inherit"
-                            style={{ backgroundColor: "black" }}
+                            style={{ backgroundColor: "black",marginRight:"40px" }}
                             onClick={(e) => handleProfileMenuOpen(e)}
                         >
                             <AccountCircle />

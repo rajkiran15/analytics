@@ -4,7 +4,6 @@ import RenderCurrentChart from "./RenderCurrentChart";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import Card from '@mui/material/Card';
 import Navbar from "../common/Navbar";
-import AddIcon from '@mui/icons-material/Add';
 import Box from '@mui/material/Box';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
@@ -13,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import LeftDrawer from "./LeftDrawer";
+import AddIcon from '@mui/icons-material/Add';
 import "../../../node_modules/react-grid-layout/css/styles.css";
 import "../../../node_modules/react-resizable/css/styles.css";
 import "./dashboard.css";
@@ -46,17 +46,17 @@ const Dashboard = () => {
             anchorEl={anchorEl}
             anchorOrigin={{
                 vertical: 'top',
-                horizontal: 'center',
+                horizontal: 'center'
             }}
             id={menuId}
             keepMounted
             transformOrigin={{
                 vertical: 'top',
-                horizontal: 'center',
+                horizontal: 'center'
             }}
             open={isMenuOpen}
             onClose={handleMenuClose}
-            style={{ position: "fixed", top: "35px", zIndex: 99999999,display:"block" }}
+            style={{ position: "fixed", top: "35px", zIndex: 99999999 }}
         >
             <MenuItem onClick={() => handleLeftDrawer(LEFT_DRAWER_TYPE.TOGGLE_LEFT_DRAWER)}>Edit Chart</MenuItem>
             <MenuItem>Transform</MenuItem>
@@ -69,56 +69,57 @@ const Dashboard = () => {
         }
     }
     return (
-        <div style={{ minWidth: "100vw", minHeight: "100vh", backgroundColor: "#FEF9F3", overflow: "hidden" }}>
+        <>
             <Navbar />
-            <ResponsiveReactGridLayout
-                className="layout"
-                layouts={{ lg: layout }}
-                onLayoutChange={(e) => setLayout(e)}
-                measureBeforeMount={false}
-                cols={{ lg: 5, md: 4, sm: 3, xs: 2, xxs: 1 }}
-                breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-                rowHeight={300}
-                width={1000}
-                isDraggable={true}
-            >
-                {charts.map((chart) => (
-                    <Card key={chart} id="chartCard">
-                        <Box
-                            style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                backgroundColor: "#2B1838",
-                                alignItems: "center"
-                            }}
-                        >
-                            <div style={{ display: "flex", alignItems: "center" }}>
-                                <IconButton className="headerColor">
-                                    <SignalCellularAltIcon />
-                                </IconButton>
-                                <div className="headerColor">
-                                    Title
+            <div style={{ minWidth: "100vw", minHeight: "100vh", backgroundColor: "#FEF9F3", overflow: "hidden" }} onClick={()=>{console.log("dfoj")}}>
+                <ResponsiveReactGridLayout
+                    className="layout"
+                    layouts={{ lg: layout }}
+                    onLayoutChange={(e) => setLayout(e)}
+                    measureBeforeMount={false}
+                    cols={{ lg: 5, md: 4, sm: 3, xs: 2, xxs: 1 }}
+                    breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+                    compactType={null}
+                    isDraggable={true}
+                >
+                    {charts.map((chart) => (
+                        <Card key={chart} id="chartCard">
+                            <Box
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    backgroundColor: "#2B1838",
+                                    alignItems: "center"
+                                }}
+                            >
+                                <div style={{ display: "flex", alignItems: "center" }}>
+                                    <IconButton className="headerColor">
+                                        <SignalCellularAltIcon />
+                                    </IconButton>
+                                    <div className="headerColor">
+                                        Title
+                                    </div>
                                 </div>
-                            </div>
-                            <div style={{ display: "flex", alignItems: "center" }}>
-                                <IconButton className="headerColor">
-                                    <MoreHorizIcon onClick={(e) => handleProfileMenuOpen(e)}/>
-                                </IconButton>
-                                <IconButton className="headerColor">
-                                    <CloseIcon />
-                                </IconButton>
-                            </div>
-                        </Box>
-                        {RenderCurrentChart(chart)}
-                    </Card>
-                ))}
-            </ResponsiveReactGridLayout>
-            {renderMenu()}
-            <LeftDrawer
-                handleLeftDrawer={handleLeftDrawer}
-                toggleDrawer={toggleDrawer}
-            />
-        </div>
+                                <div style={{ display: "flex", alignItems: "center" }}>
+                                    <IconButton className="headerColor" onClick={(e) => handleProfileMenuOpen(e)}>
+                                        <MoreHorizIcon />
+                                    </IconButton>
+                                    <IconButton className="headerColor" onClick={() => { console.log("close") }}>
+                                        <CloseIcon />
+                                    </IconButton>
+                                </div>
+                            </Box>
+                            {RenderCurrentChart(chart)}
+                        </Card>
+                    ))}
+                </ResponsiveReactGridLayout>
+                {renderMenu()}
+                <LeftDrawer
+                    handleLeftDrawer={handleLeftDrawer}
+                    toggleDrawer={toggleDrawer}
+                />
+            </div>
+        </>
     );
 };
 export default Dashboard;
