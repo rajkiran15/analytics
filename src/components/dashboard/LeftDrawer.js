@@ -14,13 +14,13 @@ export default function TemporaryDrawer({ handleLeftDrawer, toggleDrawer }) {
                 >
                     <Box 
                         style={{ 
-                            width: "300px", 
+                            width: "350px", 
                             height: "100vh", 
                             backgroundColor: "#ffff", 
                             boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)"
                         }}
                     >
-                        hi
+                        
                     </Box>
                 </Drawer>
             </React.Fragment>

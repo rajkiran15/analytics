@@ -113,8 +113,8 @@ export default function CustomPaginationActionsTable() {
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ width:"100%",height:"100%" }} aria-label="custom pagination table">
+    <TableContainer component={Paper} style={{ width: "100%", overflow: "hidden", height: "100%" }}>
+      <Table sx={{ width: "100%", height: "calc(100% - 50px)" }} aria-label="custom pagination table">
         <TableBody>
           {(rowsPerPage > 0
             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
