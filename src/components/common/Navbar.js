@@ -35,14 +35,15 @@ export default function Navbar() {
         >
             <MenuItem>Profile</MenuItem>
             <MenuItem>My account</MenuItem>
+            <MenuItem>Logout</MenuItem>
         </Menu>
     );
     return (
         <Box>
-            <AppBar position="static" style={{ backgroundColor: "#ffff", width: "100vw" }}>
+            <AppBar position="fixed" style={{ backgroundColor: "#ffff", width: "100vw",zIndex:9999999 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", width: "calc(100% - 50px)", alignItems: "center" }}>
                     <div>
-                        <h2 style={{ color: "black" }}>Analytics</h2>
+                        <h2 style={{ color: "black",paddingLeft:"40px" }}>Analytics</h2>
                     </div>
                     <div>
                         <IconButton
@@ -60,6 +61,7 @@ export default function Navbar() {
                 </div>
             </AppBar>
             {renderMenu}
+            <br/><br/><br/><br/>
         </Box>
     );
 }

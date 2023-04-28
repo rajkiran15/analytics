@@ -4,3 +4,7 @@ export const CHARTS_TYPE={
     "SIMPLE_BAR_CHART":"simple-bar-chart",
     "TABLE_CHART":"table-chart"
 }
+
+export const LEFT_DRAWER_TYPE={
+    "TOGGLE_LEFT_DRAWER":"TOGGLE_LEFT_DRAWER"
+}

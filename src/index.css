@@ -4,10 +4,3 @@ body{
     overflow-x: hidden;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
-.react-grid-layout {
-    position: relative !important;
-    width:100vw !important;
-}
-#chartCard{
-    background-color: aliceblue;
-}

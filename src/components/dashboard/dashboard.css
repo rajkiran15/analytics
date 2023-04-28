@@ -1,0 +1,11 @@
+.react-grid-layout {
+    position: relative !important;
+    width:100vw !important;
+}
+#chartCard{
+    background-color: aliceblue;
+}
+#chartCard .headerColor{
+    color: #83778F;
+    padding: 5px 5px;
+}
